@@ -60,12 +60,19 @@ def build_transforms(image_size: int) -> Tuple[transforms.Compose, transforms.Co
 
 
 def _resolve_data_root(root: Path) -> Path:
+    if (root / "tom").exists() and (root / "jerry").exists():
+        return root
+
     if (root / "train").exists() or (root / "val").exists():
         return root
 
-    tom_jerry_nested = root / "Tom_and_Jerry_Dataset" / "tom_and_jerry" / "tom_and_jerry"
-    if tom_jerry_nested.exists():
-        return tom_jerry_nested
+    candidates = [
+        root / "tom_and_jerry" / "tom_and_jerry",
+        root / "Tom_and_Jerry_Dataset" / "tom_and_jerry" / "tom_and_jerry",
+    ]
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
 
     return root
 

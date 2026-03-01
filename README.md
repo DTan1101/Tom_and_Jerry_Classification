@@ -14,9 +14,11 @@ This project supports both classical machine learning and deep learning for the 
   - `ground_truth.csv`: frame-level labels (`tom`, `jerry`)
   - `challenges.csv`: difficult/distorted samples for error analysis
 
-Default binary classification setup in this repository uses only:
+Default 4-class classification setup in this repository uses:
 - `tom`
 - `jerry`
+- `tom_jerry_0`
+- `tom_jerry_1`
 
 ## 2) Default dataset path
 
@@ -134,5 +136,5 @@ Also prints the longest continuous streak where both Tom and Jerry appear togeth
 ## 9) Suggested extension direction
 
 1. Add challenge-set evaluation by filtering images listed in `challenges.csv`.
-2. Add 4-class mode using folders `tom`, `jerry`, `tom_jerry_1`, `tom_jerry_0`.
-3. Add experiment tracking and confusion-matrix exports under `outputs/runs/`.
+2. Add experiment tracking and confusion-matrix exports under `outputs/runs/`.
+3. Add model registry and hyperparameter sweep support for reproducible comparisons.

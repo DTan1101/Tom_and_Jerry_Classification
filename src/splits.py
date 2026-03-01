@@ -9,9 +9,16 @@ from src.data import IMAGE_EXTENSIONS
 
 def discover_image_root(data_dir: str) -> Path:
     root = Path(data_dir)
-    nested = root / "Tom_and_Jerry_Dataset" / "tom_and_jerry" / "tom_and_jerry"
-    if nested.exists():
-        return nested
+    if (root / "tom").exists() and (root / "jerry").exists():
+        return root
+
+    candidates = [
+        root / "tom_and_jerry" / "tom_and_jerry",
+        root / "Tom_and_Jerry_Dataset" / "tom_and_jerry" / "tom_and_jerry",
+    ]
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
     return root
 
 

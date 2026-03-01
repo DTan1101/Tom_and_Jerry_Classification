@@ -3,7 +3,7 @@ seed: 42
 
 data:
   data_dir: data/Tom_and_Jerry_Dataset
-  classes: ["tom", "jerry"]
+  classes: ["tom", "jerry", "tom_jerry_0", "tom_jerry_1"]
 
 split:
   train_ratio: 0.7
