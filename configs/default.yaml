@@ -1,0 +1,23 @@
+﻿project_name: tom_and_jerry_deep
+seed: 42
+
+data:
+  data_dir: data/Tom_and_Jerry_Dataset
+  classes: ["tom", "jerry"]
+  image_size: 224
+  val_split: 0.2
+
+training:
+  epochs: 10
+  batch_size: 32
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  num_workers: 2
+  checkpoint_dir: outputs/checkpoints
+
+model:
+  name: resnet18
+  pretrained: true
+
+inference:
+  top_k: 3

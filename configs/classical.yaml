@@ -1,0 +1,22 @@
+﻿project_name: tom_and_jerry_classical
+seed: 42
+
+data:
+  data_dir: data/Tom_and_Jerry_Dataset
+  classes: ["tom", "jerry"]
+
+split:
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.15
+  output_csv: outputs/splits/train_val_test.csv
+
+classical:
+  feature:
+    name: hog   # raw | hog | sift
+    image_size: 128
+  model:
+    name: svm   # svm | rf | nb
+    use_pca: true
+    pca_components: 128
+  output_model_path: outputs/models/classical_model.joblib

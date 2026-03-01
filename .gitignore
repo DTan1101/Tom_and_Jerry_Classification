@@ -1,0 +1,26 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+
+# Environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# Data
+data/Tom_and_Jerry_Dataset/
+
+# Outputs
+outputs/checkpoints/
+outputs/models/
+outputs/splits/
+outputs/runs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
